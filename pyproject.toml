@@ -9,7 +9,7 @@ description = "OMP - portable AI memory passport"
 readme = "README.md"
 license = {text = "Apache-2.0"}
 requires-python = ">=3.9"
-authors = [{name = "Abhishek Reddy"}]
+authors = [{name = "Tetala Lakshmi Abhishek Reddy"}]
 keywords = ["ai", "memory", "protocol", "llm", "passport", "omp"]
 classifiers = [
     "Development Status :: 3 - Alpha",
