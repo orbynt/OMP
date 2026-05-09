@@ -1,0 +1,105 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+import "omp/proto/common.proto";
+import "omp/proto/adapter.proto";
+import "omp/proto/embedding.proto";
+import "omp/proto/graph.proto";
+import "omp/proto/identity.proto";
+import "omp/proto/memory.proto";
+
+message PassportMetadata {
+  string protocol_name = 1;
+  string protocol_version = 2;
+  string schema_version = 3;
+  string file_format_version = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  string export_mode = 7;
+  string checksum_algorithm = 8;
+  string compression_algorithm = 9;
+  string creator_library_version = 10;
+  string namespace_id = 11;
+  repeated NamespaceRef namespaces = 12;
+}
+
+message Profile {
+  string biography = 1;
+  string occupation = 2;
+  string education = 3;
+  string organization = 4;
+  repeated string website_links = 5;
+}
+
+message Goal {
+  string title = 1;
+  string description = 2;
+  string priority = 3;
+  string status = 4;
+  string deadline = 5;
+  Provenance provenance = 6;
+}
+
+message GoalBundle {
+  repeated Goal goals = 1;
+}
+
+message Value {
+  string statement = 1;
+  string priority = 2;
+  string category = 3;
+  Provenance provenance = 4;
+}
+
+message ValueBundle {
+  repeated Value values = 1;
+}
+
+message Relationship {
+  string person_name = 1;
+  string relationship_type = 2;
+  string notes = 3;
+  Provenance provenance = 4;
+}
+
+message RelationshipBundle {
+  repeated Relationship relationships = 1;
+}
+
+message ProvenanceBundle {
+  repeated Provenance provenance = 1;
+}
+
+message IntegrityMetadata {
+  string verification_mode = 1;
+  string checksum_algorithm = 2;
+  string checksum_scope = 3;
+  string signature_algorithm = 4;
+  string sender_id = 5;
+  string project_id = 6;
+  map<string, string> trust_metadata = 7;
+}
+
+message OrbPassport {
+  PassportMetadata protocol_metadata = 1;
+  IdentityProfile identity = 2;
+  Profile profile = 3;
+  repeated Preference preferences = 4;
+  repeated Goal goals = 5;
+  repeated Value values = 6;
+  repeated Skill skills = 7;
+  repeated Interest interests = 8;
+  repeated Relationship relationships = 9;
+  repeated MemoryRecord memories = 10;
+  MemoryGraph graph = 11;
+  EmbeddingIndexMetadata embeddings = 12;
+  repeated AdapterMetadata adapters = 13;
+  repeated Provenance provenance = 14;
+  ExportPolicy export_policy = 15;
+  IntegrityMetadata integrity = 16;
+  bool verified = 17;
+  string tier = 18;
+}
+
+

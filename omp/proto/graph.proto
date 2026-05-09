@@ -1,0 +1,42 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+enum EdgeKind {
+  EDGE_KIND_UNSPECIFIED = 0;
+  EDGE_KIND_RELATES_TO = 1;
+  EDGE_KIND_SUPPORTS = 2;
+  EDGE_KIND_CONTRADICTS = 3;
+  EDGE_KIND_DEPENDS_ON = 4;
+  EDGE_KIND_DERIVED_FROM = 5;
+  EDGE_KIND_TEMPORAL_BEFORE = 6;
+  EDGE_KIND_TEMPORAL_AFTER = 7;
+}
+
+message GraphNode {
+  string node_id = 1;
+  string memory_id = 2;
+  string label = 3;
+}
+
+message GraphEdge {
+  string edge_id = 1;
+  string source_memory_id = 2;
+  string target_memory_id = 3;
+  EdgeKind kind = 4;
+  float weight = 5;
+}
+
+message MemoryCluster {
+  string cluster_id = 1;
+  string name = 2;
+  repeated string memory_ids = 3;
+}
+
+message MemoryGraph {
+  repeated GraphNode nodes = 1;
+  repeated GraphEdge edges = 2;
+  repeated MemoryCluster clusters = 3;
+}
+
+

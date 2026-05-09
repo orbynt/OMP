@@ -1,0 +1,53 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+import "omp/proto/common.proto";
+import "omp/proto/embedding.proto";
+
+enum MemoryType {
+  MEMORY_TYPE_UNSPECIFIED = 0;
+  MEMORY_TYPE_FACT = 1;
+  MEMORY_TYPE_GOAL = 2;
+  MEMORY_TYPE_PREFERENCE = 3;
+  MEMORY_TYPE_VALUE = 4;
+  MEMORY_TYPE_SKILL = 5;
+  MEMORY_TYPE_INTEREST = 6;
+  MEMORY_TYPE_RELATIONSHIP = 7;
+  MEMORY_TYPE_EVENT = 8;
+  MEMORY_TYPE_PROJECT = 9;
+  MEMORY_TYPE_NOTE = 10;
+  MEMORY_TYPE_CONVERSATION = 11;
+  MEMORY_TYPE_EPISODIC = 12;
+}
+
+message RetrievalMetadata {
+  repeated string keywords = 1;
+  repeated string embedding_ids = 2;
+  float importance = 3;
+}
+
+message MemoryRecord {
+  string memory_id = 1;
+  MemoryType memory_type = 2;
+  string summary = 3;
+  string full_content = 4;
+  string namespace_id = 5;
+  repeated string tags = 6;
+  float confidence = 7;
+  float importance = 8;
+  string created_at = 9;
+  string updated_at = 10;
+  Provenance provenance = 11;
+  repeated string related_memory_ids = 12;
+  repeated EmbeddingRef embedding_refs = 13;
+  repeated string graph_node_refs = 14;
+  map<string, string> custom_attributes = 15;
+  RetrievalMetadata retrieval = 16;
+}
+
+message MemoryBundle {
+  repeated MemoryRecord memories = 1;
+}
+
+

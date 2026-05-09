@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+message EmbeddingModel {
+  string model_id = 1;
+  string provider = 2;
+  string name = 3;
+  uint32 dimensions = 4;
+}
+
+message EmbeddingVector {
+  string embedding_id = 1;
+  string memory_id = 2;
+  string model_id = 3;
+  repeated float values = 4;
+  string external_ref = 5;
+}
+
+message EmbeddingRef {
+  string embedding_id = 1;
+  string memory_id = 2;
+  string model_id = 3;
+}
+
+message EmbeddingIndexMetadata {
+  repeated EmbeddingModel models = 1;
+  repeated EmbeddingVector vectors = 2;
+}
+
+

@@ -1,0 +1,33 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+import "omp/proto/common.proto";
+
+message ChunkDescriptor {
+  uint32 chunk_type = 1;
+  uint32 chunk_flags = 2;
+  uint64 chunk_offset = 3;
+  uint64 chunk_length = 4;
+  Checksum checksum = 5;
+}
+
+message OrbContainerMetadata {
+  string version = 1;
+  repeated ChunkDescriptor chunks = 2;
+}
+
+message OrbFooter {
+  uint64 total_file_length = 1;
+  Checksum checksum = 2;
+  bytes footer_magic = 3;
+}
+
+message OrbContainer {
+  OrbContainerMetadata metadata = 1;
+  repeated bytes chunks = 2;
+  OrbFooter footer = 3;
+}
+
+
+

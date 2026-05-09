@@ -1,0 +1,23 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+import "omp/proto/common.proto";
+import "omp/proto/memory.proto";
+
+message QueryFilter {
+  repeated MemoryType memory_types = 1;
+  repeated string tags = 2;
+  TimeRange time_range = 3;
+  float minimum_confidence = 4;
+}
+
+message MemoryQuery {
+  string text = 1;
+  QueryFilter filter = 2;
+  uint32 limit = 3;
+  bool include_embeddings = 4;
+  bool include_graph = 5;
+}
+
+

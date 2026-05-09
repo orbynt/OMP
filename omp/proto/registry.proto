@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+message ChunkTypeRegistration {
+  uint32 chunk_type = 1;
+  string name = 2;
+  string proto_message = 3;
+  bool standard = 4;
+}
+
+message SchemaRegistration {
+  string schema = 1;
+  string version = 2;
+  string package = 3;
+}
+
+message NamespaceRegistration {
+  string namespace_id = 1;
+  string owner = 2;
+  bool access_controlled = 3;
+}
+
+message RegistrySnapshot {
+  repeated ChunkTypeRegistration chunk_types = 1;
+  repeated SchemaRegistration schemas = 2;
+  repeated NamespaceRegistration namespaces = 3;
+}
+
+
+

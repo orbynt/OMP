@@ -1,0 +1,25 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+message KeyDescriptor {
+  string key_id = 1;
+  string algorithm = 2;
+  string created_at = 3;
+}
+
+message KeyRotationMetadata {
+  string previous_key_id = 1;
+  string current_key_id = 2;
+  string rotated_at = 3;
+}
+
+message EncryptedEnvelope {
+  KeyDescriptor key = 1;
+  bytes nonce = 2;
+  bytes ciphertext = 3;
+  bytes auth_tag = 4;
+}
+
+
+

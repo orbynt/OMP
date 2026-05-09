@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omp"
+version = "0.1.0"
+description = "OMP - portable AI memory passport"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+authors = [{name = "Abhishek Reddy"}]
+keywords = ["ai", "memory", "protocol", "llm", "passport", "omp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "protobuf>=4.25.0",
+    "zstandard>=0.22.0",
+]
+
+[project.optional-dependencies]
+embeddings = ["numpy>=1.24"]
+dev = ["pytest", "pytest-cov", "black", "ruff", "mypy"]
+
+[project.scripts]
+omp = "omp.cli.main:main"
+
+[tool.setuptools.packages.find]
+include = ["omp*"]
+
+[tool.setuptools.package-data]
+"omp.proto" = ["*.proto"]

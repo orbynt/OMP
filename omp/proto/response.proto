@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+import "omp/proto/memory.proto";
+
+message MemoryMatch {
+  MemoryRecord memory = 1;
+  float score = 2;
+}
+
+message MemoryResponse {
+  repeated MemoryMatch matches = 1;
+}
+
+message ProtocolError {
+  string code = 1;
+  string message = 2;
+}
+
+
+

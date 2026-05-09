@@ -1,0 +1,59 @@
+﻿syntax = "proto3";
+
+package orbynt.memory.protocol.v1;
+
+enum AdapterFeature {
+  ADAPTER_FEATURE_UNSPECIFIED = 0;
+  ADAPTER_MEMORY_TEXT = 1;
+  ADAPTER_PREFERENCES = 2;
+  ADAPTER_SKILLS = 3;
+  ADAPTER_GRAPH_SUMMARY = 4;
+  ADAPTER_EMBEDDINGS = 5;
+}
+
+enum DegradationSeverity {
+  DEGRADATION_UNSPECIFIED = 0;
+  DEGRADATION_INFO = 1;
+  DEGRADATION_WARNING = 2;
+  DEGRADATION_LOSSY = 3;
+}
+
+message AdapterCapability {
+  AdapterFeature feature = 1;
+  bool supported = 2;
+}
+
+message DegradationNotice {
+  AdapterFeature feature = 1;
+  DegradationSeverity severity = 2;
+  string message = 3;
+}
+
+message AdapterDescriptor {
+  string name = 1;
+  string target_system = 2;
+  string author = 3;
+  string package = 4;
+  string pypi_url = 5;
+  string omp_version = 6;
+  bool verified = 7;
+}
+
+message AdapterMetadata {
+  string adapter_id = 1;
+  string target_ai = 2;
+  repeated AdapterCapability capabilities = 3;
+  repeated DegradationNotice degradation_notices = 4;
+}
+
+message AdapterMetadataBundle {
+  repeated AdapterMetadata adapters = 1;
+}
+
+message AdapterMapping {
+  string source_field = 1;
+  string target_field = 2;
+  string transform = 3;
+}
+
+
