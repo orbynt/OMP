@@ -1,10 +1,10 @@
 # Orbynt Memory Protocol (OMP)
 
-[![Package](https://img.shields.io/badge/package-omp-blue)](https://pypi.org/project/omp/)
+[![Package](https://img.shields.io/badge/package-orbynt-protocol-blue)](https://pypi.org/project/orbynt-protocol/)
 [![File](https://img.shields.io/badge/file-.orb-success)](#orb-files)
 [![Trust](https://img.shields.io/badge/trust-open%20unverified-orange)](#trust-and-safety)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
-[![Downloads](https://img.shields.io/pypi/dm/omp)](https://pypi.org/project/omp/)
+[![Downloads](https://img.shields.io/pypi/dm/orbynt-protocol)](https://pypi.org/project/orbynt-protocol/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](#license)
 
 OMP is a portable memory passport for AI.
