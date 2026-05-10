@@ -4,6 +4,7 @@
 [![File](https://img.shields.io/badge/file-.orb-success)](#orb-files)
 [![Trust](https://img.shields.io/badge/trust-open%20unverified-orange)](#trust-and-safety)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![Downloads](https://img.shields.io/pypi/dm/omp)](https://pypi.org/project/omp/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-green)](#license)
 
 OMP is a portable memory passport for AI.
@@ -48,18 +49,6 @@ Developers can use OMP to:
 - export memory to JSON or Markdown
 - access bundled protobuf schemas
 - build tools around one shared memory format
-
-## Demo
-
-Write memories once. Any AI reads them instantly.
-
-```python
-import omp
-
-passport = omp.read("memory.orb")
-prompt = omp.inject(passport, target="anthropic")
-# Pass prompt to any AI - they instantly know the user
-```
 
 ## System Diagram
 
