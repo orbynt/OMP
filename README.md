@@ -1,6 +1,5 @@
 # Orbynt Memory Protocol (OMP)
 
-[![Package](https://img.shields.io/badge/package-orbynt-protocol-blue)](https://pypi.org/project/orbynt-protocol/)
 [![File](https://img.shields.io/badge/file-.orb-success)](#orb-files)
 [![Trust](https://img.shields.io/badge/trust-open%20unverified-orange)](#trust-and-safety)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
