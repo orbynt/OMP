@@ -49,6 +49,18 @@ Developers can use OMP to:
 - access bundled protobuf schemas
 - build tools around one shared memory format
 
+## Demo
+
+Write memories once. Any AI reads them instantly.
+
+```python
+import omp
+
+passport = omp.read("memory.orb")
+prompt = omp.inject(passport, target="anthropic")
+# Pass prompt to any AI - they instantly know the user
+```
+
 ## System Diagram
 
 This is the high-level flow:
