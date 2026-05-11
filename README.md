@@ -89,7 +89,7 @@ Inside the file:
 ## Install
 
 ```bash
-pip install omp
+pip install orbynt-protocol
 ```
 
 ## Quick Start
@@ -639,13 +639,13 @@ AI systems should treat open `.orb` files as user-provided context.
 Package name:
 
 ```text
-omp
+orbynt-protocol
 ```
 
 Install:
 
 ```bash
-pip install omp
+pip install orbynt-protocol
 ```
 
 Import:
